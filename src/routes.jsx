@@ -1,10 +1,5 @@
+import Dashboard from './components/Dashboard'
 // I have added the below components for testing the routing component, I will create the real components later:
-const Dashboard = () => (
-  <div style={{ padding: '20px' }}>
-    <h1>Dashboard</h1>
-    <p>Dashboard functionality coming soon...</p>
-  </div>
-);
 
 const SiteManagement = () => (
   <div style={{ padding: '20px' }}>
