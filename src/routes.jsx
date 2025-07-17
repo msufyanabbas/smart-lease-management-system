@@ -1,47 +1,15 @@
-import Dashboard from './components/Dashboard'
-// I have added the below components for testing the routing component, I will create the real components later:
-
-const SiteManagement = () => (
-  <div style={{ padding: '20px' }}>
-    <h1>Site Management</h1>
-    <p>Site management functionality coming soon...</p>
-  </div>
-);
-
-const LeaseRequest = () => (
-  <div style={{ padding: '20px' }}>
-    <h1>New Lease Request</h1>
-    <p>Lease request form coming soon...</p>
-  </div>
-);
-
-const Workflow = () => (
-  <div style={{ padding: '20px' }}>
-    <h1>Workflow Tracker</h1>
-    <p>Workflow tracking coming soon...</p>
-  </div>
-);
-
-const Contracts = () => (
-  <div style={{ padding: '20px' }}>
-    <h1>Contracts</h1>
-    <p>Contract management coming soon...</p>
-  </div>
-);
-
-const Insights = () => (
-  <div style={{ padding: '20px' }}>
-    <h1>Operational Insights</h1>
-    <p>Analytics and insights coming soon...</p>
-  </div>
-);
-
+import Dashboard from './pages/Dashboard'
+import SiteManagement from './pages/SiteManagement';
+import LeaseRequest from './pages/Lease/LeaseRequestForm';
+import WorkflowTracker from './pages/WorkflowTracker';
+import ContractManagement from './pages/ContractManagement';
+import OperationalInsights from './pages/OperationalInsights';
 
 export const appRoutes = [
   { path: '/', element: <Dashboard /> },
   { path: '/sites', element: <SiteManagement /> },
   { path: '/lease-request', element: <LeaseRequest /> },
-  { path: '/workflow', element: <Workflow /> },
-  { path: '/contracts', element: <Contracts /> },
-  { path: '/insights', element: <Insights /> },
+  { path: '/workflow', element: <WorkflowTracker /> },
+  { path: '/contracts', element: <ContractManagement /> },
+  { path: '/insights', element: <OperationalInsights /> },
 ];
