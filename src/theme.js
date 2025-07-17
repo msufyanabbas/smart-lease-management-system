@@ -2,38 +2,43 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
+    mode: 'light', // Change to 'dark' if you prefer
     primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: '#2563eb', // blue-600
+      light: '#60a5fa', // blue-400
+      dark: '#1e40af',  // blue-800
     },
     secondary: {
-      main: '#dc004e',
-      light: '#ff5983',
-      dark: '#9a0036',
+      main: '#6366f1', // indigo-500
+      light: '#a5b4fc',
+      dark: '#4f46e5',
     },
     background: {
-      default: '#f5f5f5',
+      default: '#f9fafb',
       paper: '#ffffff',
     },
     success: {
-      main: '#4caf50',
+      main: '#22c55e', // green-500
     },
     warning: {
-      main: '#ff9800',
+      main: '#f59e0b', // amber-500
     },
     error: {
-      main: '#f44336',
+      main: '#ef4444', // red-500
     },
     info: {
-      main: '#2196f3',
+      main: '#3b82f6', // blue-500
+    },
+    text: {
+      primary: '#1f2937', // gray-800
+      secondary: '#4b5563', // gray-600
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
     h4: {
       fontWeight: 600,
-      fontSize: '2.125rem',
+      fontSize: '2rem',
     },
     h5: {
       fontWeight: 600,
@@ -45,11 +50,11 @@ const theme = createTheme({
     },
     body1: {
       fontSize: '1rem',
-      lineHeight: 1.5,
+      lineHeight: 1.6,
     },
     body2: {
       fontSize: '0.875rem',
-      lineHeight: 1.43,
+      lineHeight: 1.5,
     },
   },
   shape: {
@@ -75,9 +80,9 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          boxShadow: '0px 2px 8px rgba(0,0,0,0.1)',
+          boxShadow: '0px 2px 8px rgba(0,0,0,0.05)',
           borderRadius: 12,
-          border: '1px solid #f0f0f0',
+          border: '1px solid #e5e7eb',
         },
       },
     },
@@ -100,12 +105,14 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           border: 'none',
+          fontSize: '0.875rem',
           '& .MuiDataGrid-cell': {
-            borderBottom: '1px solid #f0f0f0',
+            borderBottom: '1px solid #e5e7eb',
           },
           '& .MuiDataGrid-columnHeaders': {
-            backgroundColor: '#fafafa',
-            borderBottom: '2px solid #e0e0e0',
+            backgroundColor: '#f3f4f6',
+            fontWeight: 600,
+            borderBottom: '2px solid #d1d5db',
           },
         },
       },
@@ -113,17 +120,13 @@ const theme = createTheme({
     MuiTable: {
       styleOverrides: {
         root: {
-          '& .MuiTableHead-root': {
-            '& .MuiTableCell-root': {
-              backgroundColor: '#fafafa',
-              fontWeight: 600,
-              color: '#666',
-            },
+          '& .MuiTableHead-root .MuiTableCell-root': {
+            backgroundColor: '#f3f4f6',
+            fontWeight: 600,
+            color: '#374151',
           },
-          '& .MuiTableRow-root': {
-            '&:hover': {
-              backgroundColor: '#f9f9f9',
-            },
+          '& .MuiTableRow-root:hover': {
+            backgroundColor: '#f9fafb',
           },
         },
       },
