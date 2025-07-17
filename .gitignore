@@ -26,3 +26,5 @@ supabase/
 *.sln
 *.sw?
 
+
+.vercel
