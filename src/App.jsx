@@ -1,34 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-});
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 1,
-      staleTime: 5 * 60 * 1000,
-    },
-  },
-});
-
-
-// I have added the below components for testing the routing component, I will create the real components later:
-const Dashboard = () => <div>Dashboard Coming Soon...</div>;
-const SiteManagement = () => <div>Site Management Coming Soon...</div>;
-const LeaseRequest = () => <div>Lease Request Coming Soon...</div>;
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { QueryClientProvider } from '@tanstack/react-query';
+import Layout from './components/Common/Layout';
+import { appRoutes } from './routes';
+import queryClient from './lib/ReactQuery';
+import theme from './theme';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -36,13 +13,14 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <div className="App">
+          <Layout>
+            <Toaster position="top-right" />
             <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/sites" element={<SiteManagement />} />
-              <Route path="/lease-request" element={<LeaseRequest />} />
+              {appRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
             </Routes>
-          </div>
+          </Layout>
         </Router>
       </ThemeProvider>
     </QueryClientProvider>
